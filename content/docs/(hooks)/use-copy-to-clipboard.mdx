@@ -1,0 +1,27 @@
+---
+title: useCopyToClipboard
+description: A hook that allows you to copy text to the clipboard.
+---
+import { ComponentInstall } from "@/components/component-install";
+
+## Installation
+<ComponentInstall name="use-copy-to-clipboard" />
+
+## Usage
+
+```tsx
+import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard"
+
+function Example() {
+  const { isCopied, copyToClipboard } = useCopyToClipboard({
+    timeout: 2000, // Reset copied state after 2 seconds
+    onCopy: (text) => console.log(`Copied: ${text}`),
+  })
+
+  return (
+    <button onClick={() => copyToClipboard("Hello World!")}>
+      {isCopied ? "Copied!" : "Copy Text"}
+    </button>
+  )
+}
+```

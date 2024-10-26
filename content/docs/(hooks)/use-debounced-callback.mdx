@@ -1,0 +1,38 @@
+---
+title: useDebouncedCallback
+description: A hook that debounces a callback function.
+---
+import { ComponentInstall } from "@/components/component-install";
+
+## Installation
+<ComponentInstall name="use-debounced-callback" />
+
+## Usage
+```tsx
+import { useDebouncedCallback } from "@/hooks/use-debounced-callback"
+
+function Example() {
+  const [value, setValue] = React.useState("")
+  const debouncedSearch = useDebouncedCallback((searchTerm: string) => {
+    // Simulating API call
+    console.log(`Searching for: ${searchTerm}`)
+  }, 500) // 500ms delay
+
+  return (
+    <div className="flex flex-col gap-4">
+      <input
+        type="text"
+        value={value}
+        onChange={(e) => {
+          setValue(e.target.value)
+          debouncedSearch(e.target.value)
+        }}
+        placeholder="Search..."
+        className="border p-2 rounded"
+      />
+      <p>Type to search - API call will be made 500ms after you stop typing</p>
+    </div>
+  )
+}
+
+```

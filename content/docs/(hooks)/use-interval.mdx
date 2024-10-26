@@ -1,0 +1,39 @@
+---
+title: useInterval
+description: A hook that provides a way to execute a callback function at specified intervals.
+---
+import { ComponentInstall } from "@/components/component-install";
+
+## Installation
+<ComponentInstall name="use-interval" />
+
+## Usage
+```tsx
+import { useInterval } from "@/hooks/use-interval"
+
+function Example() {
+  const [count, setCount] = React.useState(0)
+  const [isRunning, setIsRunning] = React.useState(false)
+
+  useInterval(
+    () => {
+      setCount((count) => count + 1)
+    },
+    // Pass null to pause the interval
+    isRunning ? 1000 : null
+  )
+
+  return (
+    <div className="flex flex-col gap-4">
+      <p>Count: {count}</p>
+      <button
+        onClick={() => setIsRunning(!isRunning)}
+        className="px-4 py-2 border rounded"
+      >
+        {isRunning ? "Stop" : "Start"} Counter
+      </button>
+    </div>
+  )
+}
+
+```

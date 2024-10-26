@@ -1,0 +1,13 @@
+{
+  "name": "use-local-storage",
+  "type": "registry:hook",
+  "description": "A hook that allows you to store and retrieve values from local storage.",
+  "files": [
+    {
+      "path": "hooks/use-local-storage.ts",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\n\ntype SetValue<T> = T | ((prevValue: T) => T);\n\nexport function useLocalStorage<T>(\n\tkey: string,\n\tinitialValue: T,\n): [T, (value: SetValue<T>) => void] {\n\tconst readValue = React.useCallback((): T => {\n\t\tif (typeof window === \"undefined\") {\n\t\t\treturn initialValue;\n\t\t}\n\n\t\ttry {\n\t\t\tconst item = window.localStorage.getItem(key);\n\t\t\treturn item ? (JSON.parse(item) as T) : initialValue;\n\t\t} catch (error) {\n\t\t\tconsole.warn(`Error reading localStorage key \"${key}\":`, error);\n\t\t\treturn initialValue;\n\t\t}\n\t}, [key, initialValue]);\n\n\tconst [storedValue, setStoredValue] = React.useState<T>(readValue);\n\n\tconst setValue = React.useCallback(\n\t\t(value: SetValue<T>) => {\n\t\t\ttry {\n\t\t\t\tconst valueToStore =\n\t\t\t\t\tvalue instanceof Function ? value(storedValue) : value;\n\n\t\t\t\tsetStoredValue(valueToStore);\n\n\t\t\t\tif (typeof window !== \"undefined\") {\n\t\t\t\t\twindow.localStorage.setItem(key, JSON.stringify(valueToStore));\n\t\t\t\t}\n\t\t\t} catch (error) {\n\t\t\t\tconsole.warn(`Error setting localStorage key \"${key}\":`, error);\n\t\t\t}\n\t\t},\n\t\t[key, storedValue],\n\t);\n\n\tReact.useEffect(() => {\n\t\tconst handleStorageChange = (e: StorageEvent) => {\n\t\t\tif (e.key === key && e.newValue !== null) {\n\t\t\t\ttry {\n\t\t\t\t\tsetStoredValue(JSON.parse(e.newValue));\n\t\t\t\t} catch {\n\t\t\t\t\tsetStoredValue(readValue());\n\t\t\t\t}\n\t\t\t}\n\t\t};\n\n\t\twindow.addEventListener(\"storage\", handleStorageChange);\n\n\t\tsetStoredValue(readValue());\n\n\t\treturn () => {\n\t\t\twindow.removeEventListener(\"storage\", handleStorageChange);\n\t\t};\n\t}, [key, readValue]);\n\n\treturn [storedValue, setValue];\n}\n",
+      "type": "registry:hook",
+      "target": ""
+    }
+  ]
+}

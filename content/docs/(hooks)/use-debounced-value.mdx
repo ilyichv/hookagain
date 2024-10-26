@@ -1,0 +1,32 @@
+---
+title: useDebouncedValue
+description: A hook that debounces a value.
+---
+import { ComponentInstall } from "@/components/component-install";
+
+## Installation
+<ComponentInstall name="use-debounced-value" />
+
+## Usage
+```tsx
+import { useDebouncedValue } from "@/hooks/use-debounced-value"
+
+function Example() {
+  const [value, setValue] = React.useState("")
+  const debouncedValue = useDebouncedValue(value, 500) // 500ms delay
+
+  return (
+    <div className="flex flex-col gap-4">
+      <input
+        type="text"
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+        placeholder="Type something..."
+        className="border p-2 rounded"
+      />
+      <p>Actual value: {value}</p>
+      <p>Debounced value: {debouncedValue}</p>
+    </div>
+  )
+}
+```

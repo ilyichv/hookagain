@@ -1,0 +1,13 @@
+{
+  "name": "use-interval",
+  "type": "registry:hook",
+  "description": "A hook that runs a callback at a given interval.",
+  "files": [
+    {
+      "path": "hooks/use-interval.ts",
+      "content": "import * as React from \"react\";\n\nexport function useInterval(callback: () => void, delay: number | null) {\n\tconst savedCallback = React.useRef(callback);\n\n\tReact.useEffect(() => {\n\t\tsavedCallback.current = callback;\n\t}, [callback]);\n\n\tReact.useEffect(() => {\n\t\tif (delay === null) {\n\t\t\treturn;\n\t\t}\n\n\t\tconst id = setInterval(() => savedCallback.current(), delay);\n\n\t\treturn () => {\n\t\t\tclearInterval(id);\n\t\t};\n\t}, [delay]);\n}\n",
+      "type": "registry:hook",
+      "target": ""
+    }
+  ]
+}

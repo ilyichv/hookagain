@@ -1,0 +1,27 @@
+---
+title: useMediaQuery
+description: A hook that provides a way to detect if a media query matches the current viewport.
+---
+import { ComponentInstall } from "@/components/component-install";
+
+## Installation
+<ComponentInstall name="use-media-query" />
+
+## Usage
+
+```tsx
+import { useMediaQuery } from "@/hooks/use-media-query"
+
+function Example() {
+  const isDesktop = useMediaQuery("(min-width: 768px)")
+  const prefersDark = useMediaQuery("(prefers-color-scheme: dark)")
+
+  return (
+    <div>
+      <p>Is Desktop: {isDesktop ? "Yes" : "No"}</p>
+      <p>Prefers Dark Theme: {prefersDark ? "Yes" : "No"}</p>
+    </div>
+  )
+}
+
+```

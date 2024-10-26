@@ -1,0 +1,29 @@
+{
+    "$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
+    "organizeImports": {
+        "enabled": true
+    },
+    "linter": {
+        "enabled": true,
+        "rules": {
+            "recommended": true,
+            "suspicious": {
+                "noExplicitAny": "off",
+                "noArrayIndexKey": "off"
+            }
+        },
+        "ignore": [
+            ".next/**"
+        ]
+    },
+    "formatter": {
+        "enabled": true,
+        "ignore": [
+            "node_modules/*",
+            "*.config.*",
+            "*.json",
+            "tsconfig.json",
+            ".next/*"
+        ]
+    }
+}

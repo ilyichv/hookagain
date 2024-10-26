@@ -1,0 +1,31 @@
+---
+title: useLocalStorage
+description: A hook that provides a way to store and retrieve data in the browser's local storage.
+---
+import { ComponentInstall } from "@/components/component-install";
+
+## Installation
+<ComponentInstall name="use-local-storage" />
+
+## Usage
+
+```tsx
+import { useLocalStorage } from "@/hooks/use-local-storage"
+
+function Example() {
+  const [value, setValue] = useLocalStorage<string>("my-key", "initial value")
+
+  return (
+    <div>
+      <p>Value: {value}</p>
+      <button onClick={() => setValue("new value")}>
+        Update Value
+      </button>
+      <button onClick={() => setValue((prev) => `${prev}!`)}>
+        Append !
+      </button>
+    </div>
+  )
+}
+```
+

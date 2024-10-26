@@ -1,0 +1,13 @@
+{
+  "name": "use-media-query",
+  "type": "registry:hook",
+  "description": "A hook that provides a way to detect if a media query matches the current viewport.",
+  "files": [
+    {
+      "path": "hooks/use-media-query.ts",
+      "content": "import * as React from \"react\";\n\nexport function useMediaQuery(query: string) {\n\tconst [matches, setMatches] = React.useState(false);\n\n\tReact.useEffect(() => {\n\t\tconst mediaQuery = window.matchMedia(query);\n\t\tsetMatches(mediaQuery.matches);\n\n\t\tconst listener = (event: MediaQueryListEvent) => {\n\t\t\tsetMatches(event.matches);\n\t\t};\n\n\t\tmediaQuery.addEventListener(\"change\", listener);\n\n\t\treturn () => {\n\t\t\tmediaQuery.removeEventListener(\"change\", listener);\n\t\t};\n\t}, [query]);\n\n\treturn matches;\n}\n",
+      "type": "registry:hook",
+      "target": ""
+    }
+  ]
+}
