@@ -1,4 +1,4 @@
-# hook.again
+# hookagain
 
 A collection of reusable React hooks that can be installed using the shadcn CLI.
 

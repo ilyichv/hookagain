@@ -52,6 +52,18 @@ export const Index: Record<string, any> = {
       subcategory: "",
       chunks: []
     },
+    "use-intersection-observer": {
+      name: "use-intersection-observer",
+      description: "A hook that provides an intersection observer.",
+      type: "registry:hook",
+      registryDependencies: undefined,
+      files: ["registry/hooks/use-intersection-observer.ts"],
+      component: React.lazy(() => import("@/registry/hooks/use-intersection-observer.ts")),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: []
+    },
     "use-local-storage": {
       name: "use-local-storage",
       description: "A hook that allows you to store and retrieve values from local storage.",

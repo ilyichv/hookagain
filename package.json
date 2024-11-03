@@ -1,5 +1,5 @@
 {
-  "name": "hook.again",
+  "name": "hookagain",
   "description": "A collection of reusable React hooks that can be installed using the shadcn CLI.",
   "version": "0.0.0",
   "author": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ilyichv/hook.again.git"
+    "url": "https://github.com/ilyichv/hookagain.git"
   },
   "keywords": [
     "shadcn",
@@ -47,6 +47,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
+    "@fumadocs/cli": "^0.0.3",
     "@types/mdx": "^2.0.13",
     "@types/node": "22.7.8",
     "@types/react": "^18.3.11",

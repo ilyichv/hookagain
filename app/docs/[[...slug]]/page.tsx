@@ -1,3 +1,4 @@
+import { metadataImage } from "@/lib/metadata";
 import { source } from "@/lib/source";
 import { CodeBlock, Pre } from "fumadocs-ui/components/codeblock";
 import defaultMdxComponents from "fumadocs-ui/mdx";
@@ -49,8 +50,8 @@ export async function generateMetadata(props: {
 	const page = source.getPage(params.slug);
 	if (!page) notFound();
 
-	return {
+	return metadataImage.withImage(page.slugs, {
 		title: page.data.title,
 		description: page.data.description,
-	};
+	});
 }

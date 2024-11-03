@@ -26,6 +26,12 @@ export const hooks: Registry = [
 		files: ["hooks/use-debounced-value.ts"],
 	},
 	{
+		name: "use-intersection-observer",
+		type: "registry:hook",
+		description: "A hook that provides an intersection observer.",
+		files: ["hooks/use-intersection-observer.ts"],
+	},
+	{
 		name: "use-local-storage",
 		type: "registry:hook",
 		description:

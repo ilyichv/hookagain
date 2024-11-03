@@ -44,6 +44,17 @@
     ]
   },
   {
+    "name": "use-intersection-observer",
+    "type": "registry:hook",
+    "description": "A hook that provides an intersection observer.",
+    "files": [
+      {
+        "path": "hooks/use-intersection-observer.ts",
+        "type": "registry:hook"
+      }
+    ]
+  },
+  {
     "name": "use-local-storage",
     "type": "registry:hook",
     "description": "A hook that allows you to store and retrieve values from local storage.",

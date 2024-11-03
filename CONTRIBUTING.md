@@ -1,14 +1,14 @@
 # Contributing
 
-Thanks for your interest in contributing to hook.again! Please take a moment to review this document before submitting a pull request.
+Thanks for your interest in contributing to hookagain! Please take a moment to review this document before submitting a pull request.
 
 ## Introduction
 
-hook.again is a collection of reusable React hooks that can be installed using the shadcn CLI.
+hookagain is a collection of reusable React hooks that can be installed using the shadcn CLI.
 
 ## Development
 
-To develop hook.again locally:
+To develop hookagain locally:
 
 1. Fork this repository
 2. Clone your fork
@@ -68,10 +68,10 @@ To develop hook.again locally:
 
 ## Need help?
 
-- Open a [discussion](https://github.com/ilyichv/hook.again/discussions) for questions
-- Open an [issue](https://github.com/ilyichv/hook.again/issues) for bugs
-- Submit a [pull request](https://github.com/ilyichv/hook.again/pulls) with improvements
+- Open a [discussion](https://github.com/ilyichv/hookagain/discussions) for questions
+- Open an [issue](https://github.com/ilyichv/hookagain/issues) for bugs
+- Submit a [pull request](https://github.com/ilyichv/hookagain/pulls) with improvements
 
 ## License
 
-By contributing to hook.again, you agree that your contributions will be licensed under its MIT license.
+By contributing to hookagain, you agree that your contributions will be licensed under its MIT license.

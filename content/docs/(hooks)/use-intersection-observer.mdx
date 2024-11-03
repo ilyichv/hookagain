@@ -1,0 +1,29 @@
+---
+title: useIntersectionObserver
+description: A hook that provides a way to detect when an element enters or leaves the viewport using the Intersection Observer API.
+---
+import { ComponentInstall } from "@/components/component-install";
+
+## Installation
+<ComponentInstall name="use-intersection-observer" />
+
+## Usage
+```tsx
+import { useIntersectionObserver } from "@/hooks/use-intersection-observer"
+
+function Example() {
+  const ref = React.useRef(null)
+  const entry = useIntersectionObserver(ref, {
+    threshold: 0.5,
+    rootMargin: "20px"
+  })
+  const isIntersecting = entry?.isIntersecting
+
+  return (
+    <div ref={ref}>
+      {isIntersecting ? "Element is visible" : "Element is not visible"}
+    </div>
+  )
+}
+
+```
