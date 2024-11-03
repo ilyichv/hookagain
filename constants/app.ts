@@ -1,1 +1,1 @@
-export const APP_URL = "https://hook-again.vercel.app";
+export const APP_URL = "https://hookagain.vercel.app";

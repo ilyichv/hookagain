@@ -13,7 +13,7 @@ A collection of reusable React hooks that can be installed using the shadcn CLI.
 2. Install the hook:
 
     ```bash
-    npx shadcn@latest add https://hook-again.vercel.app/r/<hook-name>.json
+    npx shadcn@latest add https://hookagain.vercel.app/r/<hook-name>.json
     ```
 3. TA-DAH 🎉
 
