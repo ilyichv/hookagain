@@ -1,0 +1,48 @@
+---
+title: usePhoenixChannel
+description: A hook that provides a phoenix channel.
+---
+import { ComponentInstall } from "@/components/component-install";
+
+## Installation
+<ComponentInstall name="use-phoenix-channel" />
+
+## Usage
+
+```tsx
+import { usePhoenixChannel } from "@/hooks/use-phoenix-channel"
+import { usePhoenixSocket } from "@/hooks/use-phoenix-socket"
+
+function Example() {
+  const socket = usePhoenixSocket("ws://localhost:4000/socket")
+  const channel = usePhoenixChannel(socket, "room:lobby", {
+    "new_message": (payload) => {
+      console.log("Received message:", payload.message)
+    },
+    "user_joined": (payload) => {
+      console.log("User joined:", payload.username)
+    }
+  })
+
+  if (!socket) {
+    return <div>Connecting to Phoenix server...</div>
+  }
+
+  if (!channel) {
+    return <div>Joining channel...</div>
+  }
+
+  const sendMessage = () => {
+    channel.push("new_message", { message: "Hello, Phoenix!" })
+  }
+
+  return (
+    <div>
+      <p>Connected to Phoenix channel!</p>
+      <button onClick={sendMessage}>
+        Send Message
+      </button>
+    </div>
+  )
+}
+```

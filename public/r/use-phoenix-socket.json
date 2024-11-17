@@ -1,0 +1,16 @@
+{
+  "name": "use-phoenix-socket",
+  "type": "registry:hook",
+  "description": "A hook that provides a phoenix socket.",
+  "dependencies": [
+    "phoenix"
+  ],
+  "files": [
+    {
+      "path": "hooks/use-phoenix-socket.ts",
+      "content": "import { Socket } from \"phoenix\";\nimport { useEffect, useState } from \"react\";\n\nexport function usePhoenixSocket(url: string) {\n\tconst [socket, setSocket] = useState<Socket | null>(null);\n\n\tuseEffect(() => {\n\t\tconst socket = new Socket(url);\n\t\tsocket.connect();\n\t\tsetSocket(socket);\n\n\t\treturn () => {\n\t\t\tsocket.disconnect();\n\t\t};\n\t}, [url]);\n\n\treturn socket;\n}\n",
+      "type": "registry:hook",
+      "target": ""
+    }
+  ]
+}

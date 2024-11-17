@@ -88,4 +88,28 @@ export const Index: Record<string, any> = {
   subcategory: "",
   chunks: []
 },
+"use-phoenix-channel": {
+  name: "use-phoenix-channel",
+  description: "A hook that provides a phoenix channel.",
+  type: "registry:hook",
+  registryDependencies: undefined,
+  files: ["registry/hooks/use-phoenix-channel.ts","registry/hooks/use-phoenix-socket.ts"],
+  component: React.lazy(() => import("@/registry/hooks/use-phoenix-channel.ts")),
+  source: "",
+  category: "",
+  subcategory: "",
+  chunks: []
+},
+"use-phoenix-socket": {
+  name: "use-phoenix-socket",
+  description: "A hook that provides a phoenix socket.",
+  type: "registry:hook",
+  registryDependencies: undefined,
+  files: ["registry/hooks/use-phoenix-socket.ts"],
+  component: React.lazy(() => import("@/registry/hooks/use-phoenix-socket.ts")),
+  source: "",
+  category: "",
+  subcategory: "",
+  chunks: []
+},
 }

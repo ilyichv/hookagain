@@ -54,5 +54,28 @@
         "files": [
             "hooks/use-media-query.ts"
         ]
+    },
+    {
+        "name": "use-phoenix-channel",
+        "type": "registry:hook",
+        "description": "A hook that provides a phoenix channel.",
+        "files": [
+            "hooks/use-phoenix-channel.ts",
+            "hooks/use-phoenix-socket.ts"
+        ],
+        "dependencies": [
+            "phoenix"
+        ]
+    },
+    {
+        "name": "use-phoenix-socket",
+        "type": "registry:hook",
+        "description": "A hook that provides a phoenix socket.",
+        "files": [
+            "hooks/use-phoenix-socket.ts"
+        ],
+        "dependencies": [
+            "phoenix"
+        ]
     }
 ]
