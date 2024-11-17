@@ -75,5 +75,37 @@
         "type": "registry:hook"
       }
     ]
+  },
+  {
+    "name": "use-phoenix-channel",
+    "type": "registry:hook",
+    "description": "A hook that provides a phoenix channel.",
+    "dependencies": [
+      "phoenix"
+    ],
+    "files": [
+      {
+        "path": "hooks/use-phoenix-channel.ts",
+        "type": "registry:hook"
+      },
+      {
+        "path": "hooks/use-phoenix-socket.ts",
+        "type": "registry:hook"
+      }
+    ]
+  },
+  {
+    "name": "use-phoenix-socket",
+    "type": "registry:hook",
+    "description": "A hook that provides a phoenix socket.",
+    "dependencies": [
+      "phoenix"
+    ],
+    "files": [
+      {
+        "path": "hooks/use-phoenix-socket.ts",
+        "type": "registry:hook"
+      }
+    ]
   }
 ]
