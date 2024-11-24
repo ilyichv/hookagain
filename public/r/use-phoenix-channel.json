@@ -1,7 +1,6 @@
 {
   "name": "use-phoenix-channel",
   "type": "registry:hook",
-  "description": "A hook that provides a phoenix channel.",
   "dependencies": [
     "phoenix"
   ],
@@ -9,12 +8,6 @@
     {
       "path": "hooks/use-phoenix-channel.ts",
       "content": "import type { Channel, Socket } from \"phoenix\";\nimport { useEffect, useState } from \"react\";\n\nexport function usePhoenixChannel(\n\tsocket: Socket | null,\n\tchannelName: string,\n\tcallbacks: Record<string, (payload: any) => void>,\n) {\n\tconst [channel, setChannel] = useState<Channel | null>(null);\n\n\tuseEffect(() => {\n\t\tif (!socket) return;\n\n\t\tconst phoenixChannel = socket.channel(channelName);\n\n\t\t// register callbacks\n\t\tObject.entries(callbacks).forEach(([event, callback]) => {\n\t\t\tphoenixChannel.on(event, callback);\n\t\t});\n\n\t\tphoenixChannel.join().receive(\"ok\", () => {\n\t\t\tsetChannel(phoenixChannel);\n\t\t});\n\n\t\treturn () => {\n\t\t\tphoenixChannel.leave();\n\t\t};\n\t}, [socket, channelName]);\n\n\treturn channel;\n}\n",
-      "type": "registry:hook",
-      "target": ""
-    },
-    {
-      "path": "hooks/use-phoenix-socket.ts",
-      "content": "import { Socket } from \"phoenix\";\nimport { useEffect, useState } from \"react\";\n\nexport function usePhoenixSocket(url: string) {\n\tconst [socket, setSocket] = useState<Socket | null>(null);\n\n\tuseEffect(() => {\n\t\tconst socket = new Socket(url);\n\t\tsocket.connect();\n\t\tsetSocket(socket);\n\n\t\treturn () => {\n\t\t\tsocket.disconnect();\n\t\t};\n\t}, [url]);\n\n\treturn socket;\n}\n",
       "type": "registry:hook",
       "target": ""
     }

@@ -1,7 +1,6 @@
 {
   "name": "use-phoenix-socket",
   "type": "registry:hook",
-  "description": "A hook that provides a phoenix socket.",
   "dependencies": [
     "phoenix"
   ],

@@ -1,7 +1,7 @@
 {
   "name": "use-local-storage",
   "type": "registry:hook",
-  "description": "A hook that allows you to store and retrieve values from local storage.",
+  "dependencies": [],
   "files": [
     {
       "path": "hooks/use-local-storage.ts",

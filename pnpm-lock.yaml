@@ -88,8 +88,8 @@ importers:
         specifier: ^6.0.1
         version: 6.0.1
       shadcn-registry:
-        specifier: ^0.0.2
-        version: 0.0.2(jiti@1.21.6)(postcss@8.4.47)(tsx@4.19.1)(yaml@2.6.0)
+        specifier: ^0.0.3
+        version: 0.0.3(jiti@1.21.6)(postcss@8.4.47)(tsx@4.19.1)(yaml@2.6.0)
       tailwindcss:
         specifier: ^3.4.14
         version: 3.4.14(ts-node@10.9.2(@types/node@22.7.8)(typescript@5.6.3))
@@ -2659,8 +2659,8 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
-  shadcn-registry@0.0.2:
-    resolution: {integrity: sha512-Tx+9W2OnroYT4rub4B7B84e3ChWAUuZ1AyWGR33OASWqnIaf0h0DpPH2nNGO2qE0/A9d31A4/dB8JvdOlN+CMQ==}
+  shadcn-registry@0.0.3:
+    resolution: {integrity: sha512-vxrMLcIz/5WWMVaNMrDAjAPfriJbizideDxG/GiNJUukSVe0aLhp0bfEhck9T4qf+UG0i0RsHrPyf2bLBdrquw==}
     hasBin: true
 
   sharp@0.33.5:
@@ -5816,7 +5816,7 @@ snapshots:
   semver@7.6.3:
     optional: true
 
-  shadcn-registry@0.0.2(jiti@1.21.6)(postcss@8.4.47)(tsx@4.19.1)(yaml@2.6.0):
+  shadcn-registry@0.0.3(jiti@1.21.6)(postcss@8.4.47)(tsx@4.19.1)(yaml@2.6.0):
     dependencies:
       chalk: 5.3.0
       commander: 12.1.0

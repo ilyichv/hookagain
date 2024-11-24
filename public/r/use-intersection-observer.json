@@ -1,7 +1,7 @@
 {
   "name": "use-intersection-observer",
   "type": "registry:hook",
-  "description": "A hook that provides an intersection observer.",
+  "dependencies": [],
   "files": [
     {
       "path": "hooks/use-intersection-observer.ts",

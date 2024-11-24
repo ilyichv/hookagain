@@ -2,7 +2,7 @@
   {
     "name": "use-copy-to-clipboard",
     "type": "registry:hook",
-    "description": "A hook that allows you to copy text to the clipboard.",
+    "dependencies": [],
     "files": [
       {
         "path": "hooks/use-copy-to-clipboard.ts",
@@ -13,7 +13,7 @@
   {
     "name": "use-debounced-callback",
     "type": "registry:hook",
-    "description": "A hook that debounces a callback.",
+    "dependencies": [],
     "files": [
       {
         "path": "hooks/use-debounced-callback.ts",
@@ -22,20 +22,9 @@
     ]
   },
   {
-    "name": "use-interval",
-    "type": "registry:hook",
-    "description": "A hook that runs a callback at a given interval.",
-    "files": [
-      {
-        "path": "hooks/use-interval.ts",
-        "type": "registry:hook"
-      }
-    ]
-  },
-  {
     "name": "use-debounced-value",
     "type": "registry:hook",
-    "description": "A hook that debounces a value.",
+    "dependencies": [],
     "files": [
       {
         "path": "hooks/use-debounced-value.ts",
@@ -46,7 +35,7 @@
   {
     "name": "use-intersection-observer",
     "type": "registry:hook",
-    "description": "A hook that provides an intersection observer.",
+    "dependencies": [],
     "files": [
       {
         "path": "hooks/use-intersection-observer.ts",
@@ -55,9 +44,20 @@
     ]
   },
   {
+    "name": "use-interval",
+    "type": "registry:hook",
+    "dependencies": [],
+    "files": [
+      {
+        "path": "hooks/use-interval.ts",
+        "type": "registry:hook"
+      }
+    ]
+  },
+  {
     "name": "use-local-storage",
     "type": "registry:hook",
-    "description": "A hook that allows you to store and retrieve values from local storage.",
+    "dependencies": [],
     "files": [
       {
         "path": "hooks/use-local-storage.ts",
@@ -68,7 +68,7 @@
   {
     "name": "use-media-query",
     "type": "registry:hook",
-    "description": "A hook that provides a way to detect if a media query matches the current viewport.",
+    "dependencies": [],
     "files": [
       {
         "path": "hooks/use-media-query.ts",
@@ -79,7 +79,6 @@
   {
     "name": "use-phoenix-channel",
     "type": "registry:hook",
-    "description": "A hook that provides a phoenix channel.",
     "dependencies": [
       "phoenix"
     ],
@@ -87,17 +86,12 @@
       {
         "path": "hooks/use-phoenix-channel.ts",
         "type": "registry:hook"
-      },
-      {
-        "path": "hooks/use-phoenix-socket.ts",
-        "type": "registry:hook"
       }
     ]
   },
   {
     "name": "use-phoenix-socket",
     "type": "registry:hook",
-    "description": "A hook that provides a phoenix socket.",
     "dependencies": [
       "phoenix"
     ],

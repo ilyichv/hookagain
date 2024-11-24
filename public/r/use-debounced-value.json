@@ -1,7 +1,7 @@
 {
   "name": "use-debounced-value",
   "type": "registry:hook",
-  "description": "A hook that debounces a value.",
+  "dependencies": [],
   "files": [
     {
       "path": "hooks/use-debounced-value.ts",

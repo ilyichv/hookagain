@@ -1,7 +1,7 @@
 {
   "name": "use-interval",
   "type": "registry:hook",
-  "description": "A hook that runs a callback at a given interval.",
+  "dependencies": [],
   "files": [
     {
       "path": "hooks/use-interval.ts",

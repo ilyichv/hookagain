@@ -1,7 +1,7 @@
 {
   "name": "use-debounced-callback",
   "type": "registry:hook",
-  "description": "A hook that debounces a callback.",
+  "dependencies": [],
   "files": [
     {
       "path": "hooks/use-debounced-callback.ts",

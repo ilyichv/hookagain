@@ -6,7 +6,7 @@ import * as React from "react"
 export const Index: Record<string, any> = {
 "use-copy-to-clipboard": {
   name: "use-copy-to-clipboard",
-  description: "A hook that allows you to copy text to the clipboard.",
+  description: "",
   type: "registry:hook",
   registryDependencies: undefined,
   files: ["registry/hooks/use-copy-to-clipboard.ts"],
@@ -18,7 +18,7 @@ export const Index: Record<string, any> = {
 },
 "use-debounced-callback": {
   name: "use-debounced-callback",
-  description: "A hook that debounces a callback.",
+  description: "",
   type: "registry:hook",
   registryDependencies: undefined,
   files: ["registry/hooks/use-debounced-callback.ts"],
@@ -28,21 +28,9 @@ export const Index: Record<string, any> = {
   subcategory: "",
   chunks: []
 },
-"use-interval": {
-  name: "use-interval",
-  description: "A hook that runs a callback at a given interval.",
-  type: "registry:hook",
-  registryDependencies: undefined,
-  files: ["registry/hooks/use-interval.ts"],
-  component: React.lazy(() => import("@/registry/hooks/use-interval.ts")),
-  source: "",
-  category: "",
-  subcategory: "",
-  chunks: []
-},
 "use-debounced-value": {
   name: "use-debounced-value",
-  description: "A hook that debounces a value.",
+  description: "",
   type: "registry:hook",
   registryDependencies: undefined,
   files: ["registry/hooks/use-debounced-value.ts"],
@@ -54,7 +42,7 @@ export const Index: Record<string, any> = {
 },
 "use-intersection-observer": {
   name: "use-intersection-observer",
-  description: "A hook that provides an intersection observer.",
+  description: "",
   type: "registry:hook",
   registryDependencies: undefined,
   files: ["registry/hooks/use-intersection-observer.ts"],
@@ -64,9 +52,21 @@ export const Index: Record<string, any> = {
   subcategory: "",
   chunks: []
 },
+"use-interval": {
+  name: "use-interval",
+  description: "",
+  type: "registry:hook",
+  registryDependencies: undefined,
+  files: ["registry/hooks/use-interval.ts"],
+  component: React.lazy(() => import("@/registry/hooks/use-interval.ts")),
+  source: "",
+  category: "",
+  subcategory: "",
+  chunks: []
+},
 "use-local-storage": {
   name: "use-local-storage",
-  description: "A hook that allows you to store and retrieve values from local storage.",
+  description: "",
   type: "registry:hook",
   registryDependencies: undefined,
   files: ["registry/hooks/use-local-storage.ts"],
@@ -78,7 +78,7 @@ export const Index: Record<string, any> = {
 },
 "use-media-query": {
   name: "use-media-query",
-  description: "A hook that provides a way to detect if a media query matches the current viewport.",
+  description: "",
   type: "registry:hook",
   registryDependencies: undefined,
   files: ["registry/hooks/use-media-query.ts"],
@@ -90,10 +90,10 @@ export const Index: Record<string, any> = {
 },
 "use-phoenix-channel": {
   name: "use-phoenix-channel",
-  description: "A hook that provides a phoenix channel.",
+  description: "",
   type: "registry:hook",
   registryDependencies: undefined,
-  files: ["registry/hooks/use-phoenix-channel.ts","registry/hooks/use-phoenix-socket.ts"],
+  files: ["registry/hooks/use-phoenix-channel.ts"],
   component: React.lazy(() => import("@/registry/hooks/use-phoenix-channel.ts")),
   source: "",
   category: "",
@@ -102,7 +102,7 @@ export const Index: Record<string, any> = {
 },
 "use-phoenix-socket": {
   name: "use-phoenix-socket",
-  description: "A hook that provides a phoenix socket.",
+  description: "",
   type: "registry:hook",
   registryDependencies: undefined,
   files: ["registry/hooks/use-phoenix-socket.ts"],

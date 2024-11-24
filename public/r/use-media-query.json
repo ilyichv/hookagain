@@ -1,7 +1,7 @@
 {
   "name": "use-media-query",
   "type": "registry:hook",
-  "description": "A hook that provides a way to detect if a media query matches the current viewport.",
+  "dependencies": [],
   "files": [
     {
       "path": "hooks/use-media-query.ts",
