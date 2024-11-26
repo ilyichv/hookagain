@@ -26,7 +26,8 @@
     "dev": "next dev",
     "start": "next start",
     "postinstall": "fumadocs-mdx",
-    "lint": "pnpm biome check ."
+    "lint": "pnpm biome check .",
+    "test": "vitest --root test/"
   },
   "dependencies": {
     "@radix-ui/react-dropdown-menu": "^2.1.2",
@@ -49,12 +50,14 @@
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@fumadocs/cli": "^0.0.3",
+    "@testing-library/react": "^16.0.1",
     "@types/mdx": "^2.0.13",
     "@types/node": "22.7.8",
     "@types/phoenix": "^1.6.5",
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.1",
     "autoprefixer": "^10.4.20",
+    "jsdom": "^25.0.1",
     "postcss": "^8.4.47",
     "rimraf": "^6.0.1",
     "shadcn-registry": "^0.0.3",
@@ -62,6 +65,7 @@
     "ts-morph": "^24.0.0",
     "ts-node": "^10.9.2",
     "tsx": "^4.19.1",
-    "typescript": "^5.6.3"
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.6"
   }
 }
