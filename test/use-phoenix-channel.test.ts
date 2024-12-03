@@ -26,13 +26,16 @@ describe("usePhoenixChannel", () => {
 		} as unknown as Socket;
 	});
 
-	it("should create a channel with the given name", () => {
+	it("should create a channel with the given name and payload", () => {
 		const channelName = "test:channel";
+		const payload = { user_id: 123 };
 		const callbacks = { test: vi.fn() };
 
-		renderHook(() => usePhoenixChannel(mockSocket, channelName, callbacks));
+		renderHook(() =>
+			usePhoenixChannel(mockSocket, channelName, payload, callbacks),
+		);
 
-		expect(mockSocket.channel).toHaveBeenCalledWith(channelName);
+		expect(mockSocket.channel).toHaveBeenCalledWith(channelName, { payload });
 	});
 
 	it("should register callbacks on the channel", () => {
@@ -41,7 +44,9 @@ describe("usePhoenixChannel", () => {
 			event2: vi.fn(),
 		};
 
-		renderHook(() => usePhoenixChannel(mockSocket, "test:channel", callbacks));
+		renderHook(() =>
+			usePhoenixChannel(mockSocket, "test:channel", undefined, callbacks),
+		);
 
 		expect(mockChannel.on).toHaveBeenCalledWith("event1", callbacks.event1);
 		expect(mockChannel.on).toHaveBeenCalledWith("event2", callbacks.event2);
@@ -50,14 +55,18 @@ describe("usePhoenixChannel", () => {
 	it("should not create a channel if socket is null", () => {
 		const callbacks = { test: vi.fn() };
 
-		renderHook(() => usePhoenixChannel(null, "test:channel", callbacks));
+		renderHook(() =>
+			usePhoenixChannel(null, "test:channel", undefined, callbacks),
+		);
 
 		expect(mockSocket.channel).not.toHaveBeenCalled();
 	});
 
 	it("should leave the channel on unmount", () => {
 		const { unmount } = renderHook(() =>
-			usePhoenixChannel(mockSocket, "test:channel", { test: vi.fn() }),
+			usePhoenixChannel(mockSocket, "test:channel", undefined, {
+				test: vi.fn(),
+			}),
 		);
 
 		unmount();
@@ -67,7 +76,9 @@ describe("usePhoenixChannel", () => {
 
 	it("should set channel state after successful join", () => {
 		const { result } = renderHook(() =>
-			usePhoenixChannel(mockSocket, "test:channel", { test: vi.fn() }),
+			usePhoenixChannel(mockSocket, "test:channel", undefined, {
+				test: vi.fn(),
+			}),
 		);
 
 		expect(result.current).toBe(mockChannel);

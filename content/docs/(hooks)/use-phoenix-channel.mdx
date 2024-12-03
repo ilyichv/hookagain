@@ -15,7 +15,7 @@ import { usePhoenixSocket } from "@/hooks/use-phoenix-socket"
 
 function Example() {
   const socket = usePhoenixSocket("ws://localhost:4000/socket")
-  const channel = usePhoenixChannel(socket, "room:lobby", {
+  const channel = usePhoenixChannel(socket, "room:lobby", undefined, {
     "new_message": (payload) => {
       console.log("Received message:", payload.message)
     },
