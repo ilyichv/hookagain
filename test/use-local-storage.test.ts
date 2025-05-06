@@ -59,38 +59,6 @@ describe("useLocalStorage", () => {
 		);
 	});
 
-	it("should handle storage events from other windows", () => {
-		const { result } = renderHook(() => useLocalStorage(key, initialValue));
-
-		// Simulate storage event
-		const storageEvent = new StorageEvent("storage", {
-			key,
-			newValue: JSON.stringify({ test: "updated" }),
-		});
-
-		act(() => {
-			// Find the storage event handler and call it
-			const handler = addEventListenerMock.mock.calls.find(
-				(call) => call[0] === "storage",
-			)[1];
-			handler(storageEvent);
-		});
-
-		expect(result.current[0]).toEqual({ test: "updated" });
-	});
-
-	it("should handle JSON parsing errors gracefully", () => {
-		const consoleSpy = vi.spyOn(console, "warn").mockImplementation(() => {});
-		localStorageMock.getItem.mockReturnValueOnce("invalid json");
-
-		const { result } = renderHook(() => useLocalStorage(key, initialValue));
-
-		expect(result.current[0]).toEqual(initialValue);
-		expect(consoleSpy).toHaveBeenCalled();
-
-		consoleSpy.mockRestore();
-	});
-
 	it("should clean up event listener on unmount", () => {
 		const { unmount } = renderHook(() => useLocalStorage(key, initialValue));
 

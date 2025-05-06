@@ -17,5 +17,6 @@ export const baseOptions: BaseLayoutProps = {
 				<Logo /> <p className="text-base font-semibold">hookagain</p>
 			</>
 		),
+		transparentMode: 'always'
 	},
 };
